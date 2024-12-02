@@ -39,7 +39,7 @@ let obj ={
     
 // }
 
-console.log(typeof([9,4,2]));
+// console.log(typeof([9,4,2])); all these 3 types are object ty
 
 
 // console.log(+"");  -- gives 0 output of Number type

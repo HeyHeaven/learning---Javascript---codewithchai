@@ -55,7 +55,34 @@ console.log(a);
 
 // 2.
 
-const b = {...x, ...y, ...z}
+const b = {...x, ...y, ...z} // spread method
 console.log(b);
 
+// Some Object Methods
+
+console.log(Object.keys(obj1)) // gives array of keys
+// Output : [ 'full name', 'age', 'gender', 'greeting' ]
+
+console.log(Object.values(obj1)) // gives array of values
+// Output : [ 'kundan thakur', '20', 'male', 'Function : greeting!' ]
+
+console.log(Object.entries(obj1)); // gives array of entities ("key: value" pair)
+// Output :
+/* [ 'full name', 'kundan thakur' ],[ 'age', 21 ],[ 'gender', 'male' ],[ 'greeting', [Function: greeting] ] */
+
+// Object De-structuring
+
+const obj5 = {
+    "full name": "kundan thakur",
+    age: 21,
+    gender: "male",
+    
+    [sym1]: "key1",
+    greeting: function () {
+        console.log(`hey, ${this["full name"]}`);
+    }
+}
+
+const { gender: gen} = obj5 // gender can now act as an independent variable
+console.log(gen);
 

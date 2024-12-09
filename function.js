@@ -49,3 +49,14 @@ const add1 = function (n1, n2) { // but not here, cuz function is assigned to "a
 
 // Arrow Function
 
+const arrowFunc = (num1 , num2) => {
+    return num1 + num2
+}
+
+const arrowFunc2 = (num1, num2) => (num1 + num2) // more efficient way
+
+// it can also be applied to whole array and etc.
+
+const arr3 = [3, 5, 2, 5, 6]
+
+arr3.forEach(()=>{console.log("hello world")})

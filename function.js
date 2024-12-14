@@ -59,4 +59,14 @@ const arrowFunc2 = (num1, num2) => (num1 + num2) // more efficient way
 
 const arr3 = [3, 5, 2, 5, 6]
 
-arr3.forEach(()=>{console.log("hello world")})
+arr3.forEach(() => { console.log("hello world") });
+
+    /************** IIFE - Immediately Invoked Function Expression ************/
+
+    (function iifeFunc() {
+        console.log("my first IIFE function");
+    })();      // Note : don't forgot to add ';' at the end to stop the function from running
+
+    ((name)=>{
+        console.log(`my first IIFE function. ${name}`);
+    })("kundan"); 

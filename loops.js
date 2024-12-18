@@ -21,8 +21,19 @@ const map1 = new Map();
 map1.set('IN','Indian')
 map1.set('DU','Dubai')
 map1.set('US','United State')
-for (const [i, j] of map1) { // here object is anything that is iterable. eg. arr, string, map is some example
-    console.log(j);
+for (const [i, j] of map1) { // here object is anything that is iterable. eg. arr, string, and map etc.
+    //console.log(j);
+}
+// 1.d. "for in" loop - is for non iterable elements .. like objects
+
+const obj1 = {
+    name: "Kundan",
+    age: 21,
+    gender: "male"
+}
+for (const i in obj1) {
+        // const element = obj1[key];
+        console.log(i);
 }
 
 // while loop

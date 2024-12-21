@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>DOM</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <div class="sampleParent">
+        <h2>days of week</h2>
+        <ul class="day">
+            <li>monday</li>
+            <li>tuesday</li>
+        </ul>
+    </div>
+</body>
+<script>
+    // //const sample = document.querySelector('.sampleParent')
+    // //
+    // // console.log(sample.children[0].outerHTML);
+    // for (let i = 0; i < sample.children.length; i++) {
+    //     //console.log(sample.children[i].innerHTML);
+    //     sample.children[i].style.color = 'red'
+    // 
+
+    // //***** Query Selector *****//
+    // const sample = document.querySelector('.day').parentElement
+    // const sample1 = document.querySelector('.day').parentNode
+    // const sample2 = document.querySelector('.day').nextElementSibling.innerHTML
+    // const sample3 = document.querySelector('.day').nextElementSibling.nextElementSibling.innerHTML
+
+    //***** Adding Element *****//
+    // const customDiv = document.createElement('div')
+    // customDiv.setAttribute("id", "1")
+    // customDiv.setAttribute("class", "customDiv")
+    // customDiv.style.padding = '5px'
+    // const textElement = document.createTextNode("Hey! kundan")
+    // customDiv.appendChild(textElement)
+    // document.body.appendChild(customDiv);
+    // console.log(document.querySelectorAll('div'));
+
+    //***** Adding Element - using Function *****//
+    function addingElementInDOM(day) {
+        const newLi = document.createElement('li')
+        newLi.innerHTML = `${day}`
+        document.querySelector('ul').appendChild(newLi)
+    }
+    addingElementInDOM('wednesday')
+
+    function addingOptimizedElementInDOM(day) {
+        const newLi = document.createElement('li');
+        newLi.appendChild(document.createTextNode(day))
+        document.querySelector('ul').appendChild(newLi)
+    }
+    // addingElementInDOM('wednesday')
+    addingElementInDOM('friday')
+
+    //***** Editing Element *****//
+
+    function editInDOM(day) {
+        const li = document.querySelector('li:last-child')
+        li.innerHTML = `${day}`
+    }
+    editInDOM('no-day')
+
+    function editOptimizedInDOM(day) {
+        const newLi = document.createElement('li')
+        newLi.appendChild(document.createTextNode(day))
+        document.querySelector('li:last-child').replaceWith(newLi)
+    }
+    editOptimizedInDOM('friday')
+
+    //***** Remove Element *****//
+
+    function removingFromDOM() {
+        document.querySelector('li:last-child').remove()
+    }
+    removingFromDOM()
+
+
+
+
+
+</script>
+
+</html>

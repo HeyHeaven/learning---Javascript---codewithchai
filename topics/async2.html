@@ -9,8 +9,29 @@
 
 <body>
     <button id="start">START</button>
-
+    <br>
     <button id="end">END</button>
 </body>
+<script>
+    const but1 = document.querySelector('#start')
+    const but2 = document.querySelector('#end')
+    const p = document.createElement('p')
+    let adder
+    let count = 0;
+    but1.addEventListener('click', () => {
+        adder = setInterval(() => {
+            count++;
+            const newLine = document.createElement('p'); // Create a new <p> for each interval
+            newLine.textContent = "It's " + count + " sec, since you pressed the start button";
+            document.body.appendChild(newLine);
+        }, 1000);
+    })
+
+    but2.addEventListener('click', () => {
+        clearInterval(adder)
+    })
+
+</script>
+
 
 </html>

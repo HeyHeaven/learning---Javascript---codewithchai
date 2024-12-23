@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello World</h1>
+    <button>STOP</button>
+</body>
+<script>
+
+    const h3 = document.createElement('h3')
+    h3.appendChild(document.createTextNode("Hello World after 3sec"))
+    setTimeout(() => {
+        console.log(1);
+
+    }, 1000);
+    setTimeout(() => {
+        console.log(2);
+    }, 2000);
+
+    //// defining TimeOut for Execution
+    const sec3 = setTimeout(() => {
+        // document.body.appendChild(h3) // we can add any kind of task to perform after curtain time
+        alert("Login karo")
+        console.log("added");
+    }, 3000); // we can set time in miliseconds to execute some task
+
+    //// stopping TimeOut from Exection
+    clearTimeout(sec3); // it stops the specified setTimeout from Execution
+
+    const button = document.querySelector('button') // or you can create a eventlistner to stop setTimeout explicitly
+    button.addEventListener('click', () => {
+        clearTimeout(sec3);
+        console.log("I STOPPED");
+    })
+</script>
+
+</html>

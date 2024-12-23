@@ -32,6 +32,12 @@
 </body>
 <script>
 
-
-
+    const image = document.getElementById('images')
+    image.addEventListener('click', (e) => {
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.parentNode);
+            // e.target.parentNode.remove();
+            e.target.parentNode.parentNode.removeChild(e.target.parentNode)
+        }
+    })
 </script>

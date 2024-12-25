@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+</body>
+<script>
+    const address = 'https://api.github.com/users/HeyHeaven'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', address)
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            const dataRecevied = JSON.parse(this.responseText)
+            console.log(dataRecevied.login);
+            console.log(dataRecevied.name);
+        }
+
+    }
+    xhr.send()
+</script>
+
+</html>
